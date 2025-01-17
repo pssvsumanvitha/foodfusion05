@@ -9,6 +9,7 @@ body {
     background-attachment: fixed;
 }
 
+/* Header Styles */
 header {
     background: linear-gradient(to right, #ff416c, #ff4b2b);
     color: white;
@@ -69,11 +70,13 @@ nav ul li a:hover {
     color: white;
 }
 
+/* Section Styles */
 section {
     padding: 40px 20px;
     text-align: center;
 }
 
+/* Menu Container */
 .menu-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -141,16 +144,7 @@ section {
     transform: translateY(-2px);
 }
 
-.add-to-cart:active {
-    background-color: #e64a19;
-    transform: translateY(1px);
-}
-
-.add-to-cart:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 127, 80, 0.6);
-}
-
+/* Search Bar */
 .search-bar {
     display: flex;
     align-items: center;
@@ -165,11 +159,6 @@ section {
     font-size: 14px;
 }
 
-.search-bar input:focus {
-    outline: none;
-    border-color: #007bff;
-}
-
 .search-bar button {
     padding: 8px 12px;
     background-color: #007bff;
@@ -178,43 +167,12 @@ section {
     cursor: pointer;
 }
 
-.search-bar button:hover {
-    background-color: #0056b3;
-}
-
-.search-bar button i {
-    font-size: 14px;
-} 
-#home {
-    background-image: url('your-background-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 60px 20px;
-    text-align: center;
-    color: black;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-#home::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: white; /* Adjust for a darker overlay */
-    backdrop-filter: blur(10px); /* Blur effect */
-    z-index: -1;
-}
-/* Cart Section Styling */
+/* Cart Section */
 #cart {
     padding: 40px 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     margin: 50px auto;
     text-align: center;
@@ -225,7 +183,7 @@ section {
 #cart h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #ff416c; /* Eye-catching color for heading */
+    color: #ff416c;
 }
 
 #cart ul {
@@ -237,7 +195,7 @@ section {
 #cart-items {
     margin-bottom: 20px;
     max-height: 300px;
-    overflow-y: auto; /* Scrollable if items exceed the height */
+    overflow-y: auto;
     border: 1px solid #ddd;
     border-radius: 8px;
     background: #fff;
@@ -247,25 +205,9 @@ section {
 #cart-items li {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #eee;
     font-size: 1rem;
-}
-
-#cart-items li:last-child {
-    border-bottom: none;
-}
-
-#cart-items li span {
-    font-weight: bold;
-    color: #555;
-}
-
-#cart h3 {
-    font-size: 1.5rem;
-    margin: 20px 0;
-    color: #ff5722;
 }
 
 #checkout {
@@ -282,19 +224,10 @@ section {
 
 #checkout:hover {
     background-color: #ff5722;
-    transform: scale(1.05); /* Slight scaling on hover */
+    transform: scale(1.05);
 }
 
-#checkout:active {
-    background-color: #e64a19;
-    transform: scale(0.95); /* Button press effect */
-}
-
-#total-price {
-    font-weight: bold;
-    color: #333;
-    font-size: 1.2rem;
-}
+/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -311,18 +244,48 @@ footer a {
     font-weight: bold;
 }
 
-footer a:hover {
-    color: #ff3f31;
-    text-decoration: underline;
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-item {
+        max-width: 250px;
+        height: auto;
+    }
+
+    .search-bar input {
+        width: 150px;
+    }
 }
 
-footer p {
-    margin: 5px 0;
-}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
 
-footer p:last-child {
-    font-size: 0.8rem;
-    color: #ccc;
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-item {
+        max-width: 100%;
+    }
+
+    .search-bar input {
+        width: 120px;
+    }
+
+    .auth-buttons button {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
 }
 #home {
     text-align: center;
@@ -359,4 +322,6 @@ footer p:last-child {
     background: rgba(0, 0, 0, 0.5); /* Overlay for better text visibility */
     z-index: 1;
 }
+
+
 
