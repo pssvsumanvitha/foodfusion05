@@ -1,0 +1,362 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('food.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcccb;
+}
+
+.auth-buttons button {
+    background: white;
+    color: #ff4b2b;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.auth-buttons button:hover {
+    background: #ff4b2b;
+    color: white;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.menu-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.add-to-cart {
+    background-color: #ff7f50;
+    color: white;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.add-to-cart:hover {
+    background-color: #ff5722;
+    transform: translateY(-2px);
+}
+
+.add-to-cart:active {
+    background-color: #e64a19;
+    transform: translateY(1px);
+}
+
+.add-to-cart:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.6);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+.search-bar button i {
+    font-size: 14px;
+} 
+#home {
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    text-align: center;
+    color: black;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white; /* Adjust for a darker overlay */
+    backdrop-filter: blur(10px); /* Blur effect */
+    z-index: -1;
+}
+/* Cart Section Styling */
+#cart {
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+#cart h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff416c; /* Eye-catching color for heading */
+}
+
+#cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto; /* Scrollable if items exceed the height */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    padding: 10px;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+#cart-items li:last-child {
+    border-bottom: none;
+}
+
+#cart-items li span {
+    font-weight: bold;
+    color: #555;
+}
+
+#cart h3 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #ff5722;
+}
+
+#checkout {
+    background-color: #ff416c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#checkout:hover {
+    background-color: #ff5722;
+    transform: scale(1.05); /* Slight scaling on hover */
+}
+
+#checkout:active {
+    background-color: #e64a19;
+    transform: scale(0.95); /* Button press effect */
+}
+
+#total-price {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    margin-top: 30px;
+    border-top: 2px solid #ff6f61;
+}
+
+footer a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #ff3f31;
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer p:last-child {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+#home {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Fallback if video doesn't load */
+}
+
+#home h2,
+#home p {
+    position: relative;
+    z-index: 2;
+}
+
+#home video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay for better text visibility */
+    z-index: 1;
+}
+

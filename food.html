@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food</title>
+    <link rel="stylesheet" href="food.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Order Your Food</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="order-food">
+        <h2>Order Food and Get It Delivered</h2>
+        <p>Fill in your details below to place an order and get it delivered to your address.</p>
+
+        <form id="order-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="order-name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="order-email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="food">Select Food Items:</label>
+                <select id="food" name="food" multiple required>
+                    <option value="Pizza">Pizza - ₹150</option>
+                    <option value="Burger">Burger - ₹150</option>
+                    <option value="Pasta">Chiken Dry Roast - ₹199</option>
+                    <option value="Pasta">Pasta - ₹100</option>
+                    <option value="Pasta">Fries - ₹70</option>
+                    <option value="Salad">Biriyani - ₹100</option>
+                    <option value="Salad">Chiken Wings - ₹150</option>
+                    <option value="Salad">Icecream - ₹50</option>
+                    <option value="Salad">Soft Drink - ₹60</option>
+                </select>
+            </div>
+            <button type="button" id="add-to-cart">Add to Cart</button>
+        </form>
+    </section>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <h3>Total: ₹<span id="total-price">0</span></h3>
+        <button id="order-now">Order Now</button>
+    </section>
+
+    <footer>
+        <p>Contact us: info@fooddelivery.com</p>
+    </footer>
+
+    <script src="food.js"></script>
+</body>
+</html>

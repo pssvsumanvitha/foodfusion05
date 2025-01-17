@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1><i class="fas fa-utensils"></i> Food Fusion</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#menu"><i class="fas fa-utensil-spoon"></i> Menu</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button onclick="redirectTo('html.html')">Login</button>
+                <button onclick="redirectTo('registration.html')">Signup</button>
+                <button onclick="redirectTo('booktable.html')">Book Table</button>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search for dishes...">
+                <button onclick="searchMenu()"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to FOODFUSION!</h2>
+        <p>Craving? We’ve got you covered.</p>
+        <video autoplay muted loop>
+            <source src="vid.mp4.mp4" type="video/mp4">
+        </video>
+    </section>
+    
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item" data-name="Pizza" data-price="300">
+                <img src="pic1.jpg" alt="Pizza" class="menu-image">
+                <h3>Pizza</h3>
+                <p>Delicious cheese and tomato pizza.</p>
+                <button class="add-to-cart">Add to Cart - ₹150</button>
+            </div>
+            <div class="menu-item" data-name="Burger" data-price="250">
+                <img src="pic2.jpg" alt="Burger" class="menu-image">
+                <h3>Burger</h3>
+                <p>Juicy burger with lettuce and tomato.</p>
+                <button class="add-to-cart">Add to Cart - ₹150</button>
+            </div>
+            <div class="menu-item" data-name="Dry Chicken Roast" data-price="400">
+                <img src="img4.jpg" alt="Dry Chicken Roast" class="menu-image">
+                <h3>Dry Chicken Roast</h3>
+                <p>Taste the Magic!</p>
+                <button class="add-to-cart">Add to Cart - ₹199</button>
+            </div>
+            <div class="menu-item" data-name="Pasta" data-price="260">
+                <img src="img25.jpg" alt="Pasta" class="menu-image">
+                <h3>Pasta</h3>
+                <p>Creamy Alfredo pasta with grilled chicken.</p>
+                <button class="add-to-cart">Add to Cart - ₹100</button>
+            </div>
+            <div class="menu-item" data-name="Fries" data-price="350">
+                <img src="img51.jpg" alt="Fries" class="menu-image">
+                <h3>Fries</h3>
+                <p>Crispy golden fries served with ketchup.</p>
+                <button class="add-to-cart">Add to Cart - ₹70</button>
+            </div>
+            <div class="menu-item" data-name="Biriyani" data-price="380">
+                <img src="img6.jpg" alt="Biriyani" class="menu-image">
+                <h3>Biriyani</h3>
+                <p>Rich and savory Biriyani!!!</p>
+                <button class="add-to-cart">Add to Cart - ₹100</button>
+            </div>
+            <div class="menu-item" data-name="Chicken Wings" data-price="500">
+                <img src="img7.jpg" alt="Chicken Wings" class="menu-image">
+                <h3>Chicken Wings</h3>
+                <p>Spicy chicken wings served with cheese dip.</p>
+                <button class="add-to-cart">Add to Cart - ₹150</button>
+            </div>
+            <div class="menu-item" data-name="Ice Cream" data-price="150">
+                <img src="img8.jpg" alt="Ice Cream" class="menu-image">
+                <h3>Ice Cream</h3>
+                <p>Delicious vanilla ice cream topped with chocolate sauce.</p>
+                <button class="add-to-cart">Add to Cart - ₹50</button>
+            </div>
+            <div class="menu-item" data-name="Soft Drink" data-price="100">
+                <img src="img9.jpg" alt="Soft Drink" class="menu-image">
+                <h3>Soft Drink</h3>
+                <p>Refreshing soft drink to complement your meal.</p>
+                <button class="add-to-cart">Add to Cart - ₹60</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <h3>Total: ₹<span id="total-price">0</span></h3>
+        <button id="checkout">Checkout</button>
+        <button  id="checkout" onclick="redirectTo('food.html')">Order</button>
+    </section>
+
+    <footer>
+        <p>Contact us: <a href="mailto:info@fooddelivery.com">info@foodfusion.com</a></p>
+        <p>&copy; 2025 FoodFusion. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Initialize an empty cart array
+        let cartItems = [];
+
+        // Function to update the cart UI
+        function updateCart() {
+            const cartItemsList = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+            
+            // Clear the cart list before updating
+            cartItemsList.innerHTML = '';
+
+            // Add each item in the cart to the list
+            let total = 0;
+            cartItems.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `${item.name} <span>₹${item.price}</span>`;
+                cartItemsList.appendChild(li);
+                total += item.price;
+            });
+
+            // Update the total price
+            totalPriceElement.textContent = total;
+        }
+
+        // Function to handle adding an item to the cart
+        function addToCart(event) {
+            // Get item details from data attributes
+            const menuItem = event.target.closest('.menu-item');
+            const name = menuItem.getAttribute('data-name');
+            const price = parseInt(menuItem.getAttribute('data-price'));
+
+            // Add the item to the cart
+            cartItems.push({ name, price });
+
+            // Update the cart UI
+            updateCart();
+        }
+
+        // Checkout function
+        function checkout() {
+            if (cartItems.length === 0) {
+                alert('Your cart is empty! Please add items before checking out.');
+                return;
+            }
+
+            alert(`Thank you for your order! Total amount: ₹${document.getElementById('total-price').textContent}`);
+            // Clear the cart after checkout
+            cartItems.length = 0;
+            updateCart(); // Re-render the empty cart
+        }
+
+        // Add event listener to checkout button
+        document.getElementById('checkout').addEventListener('click', checkout);
+
+        // Add event listeners to all "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+
+        // Initialize the cart on page load
+        window.onload = updateCart;
+
+        // Redirect Function
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+
+        // Search Functionality
+        function searchMenu() {
+            const searchQuery = document.getElementById('search').value.toLowerCase();
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            menuItems.forEach(item => {
+                const itemName = item.getAttribute('data-name').toLowerCase();
+                if (itemName.includes(searchQuery)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
