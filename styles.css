@@ -428,6 +428,98 @@ footer a {
         padding: 8px 16px;
     }
 }
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the left */
+    position: relative;
+    height: 50vh; /* Occupy half of the viewport height */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Fallback if video doesn't load */
+    padding: 20px 40px; /* Add padding for proper alignment */
+}
+
+#home video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.7; 
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 2;
+}
+
+#home h2 {
+    position: relative;
+    z-index: 3;
+    font-size: 3rem; 
+    font-family: 'Pacifico', cursive; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    margin: 0;
+    padding: 0;
+}
+
+#home p.subtitle {
+    position: relative;
+    z-index: 3;
+    font-size: 1.2rem; 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 500; 
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+}
+@media (max-width: 768px) {
+    #home h2 {
+        font-size: 2.5rem;
+    }
+
+    #home p.subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #home h2 {
+        font-size: 2rem;
+    }
+
+    #home p.subtitle {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 768px) {
+    #home h2 {
+        font-size: 2.5rem; 
+    }
+
+    #home p.subtitle {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    #home h2 {
+        font-size: 2rem; 
+    }
+
+    #home p.subtitle {
+        font-size: 0.9rem; 
+    }
+}
+
 
 
 
