@@ -198,6 +198,22 @@
                 }
             });
         }
+        document.getElementById('search-button').addEventListener('click', function() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(function(item) {
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const description = item.querySelector('p').textContent.toLowerCase();
+
+        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+            item.style.display = 'block'; // Show item
+        } else {
+            item.style.display = 'none'; // Hide item
+        }
+    });
+});
+
     </script>
 </body>
 </html>
