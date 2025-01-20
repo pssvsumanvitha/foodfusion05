@@ -468,34 +468,38 @@ footer a {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the video covers the background */
-    z-index: 1; /* Send video to the background */
-    opacity: 0.5; /* Make video semi-transparent */
+    object-fit: cover; 
+    z-index: 1; 
+    opacity: 0.3; 
 }
 
 /* Styling the content container */
 .content-container {
     position: relative;
-    z-index: 2; /* Bring text above the video */
-    color: #fff; /* White text for contrast */
+    z-index: 2;
+    color: #fff; 
     font-family: 'Poppins', sans-serif;
     max-width: 800px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background for readability */
-    border-radius: 8px; /* Rounded corners */
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
 }
 
 /* Styling the heading */
 .content-container h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
 }
 
 /* Styling the paragraph */
 .content-container p {
     font-size: 1.2rem;
     line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
 }
+
 
 
 
