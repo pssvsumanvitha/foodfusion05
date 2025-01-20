@@ -37,7 +37,6 @@ header h1 {
     margin: 0;
 }
 
-
 nav ul {
     display: flex;
     list-style: none;
@@ -172,44 +171,137 @@ footer a {
 }
 
 @media (max-width: 768px) {
+    header {
+        padding: 10px; 
+        height: auto; 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    header h1 {
+        font-size: 1.5rem; 
+        margin-bottom: 10px; 
+    }
+
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 5px; 
+        width: 100%; 
+        text-align: center; 
     }
 
-    .menu-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .auth-buttons {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-    }
-
-    .menu-item {
-        max-width: 250px;
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
+    nav ul li {
+        margin: 5px 0; 
     }
 
     .menu-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-    }
-
-    .auth-buttons {
-        flex-direction: column;
-        gap: 10px;
+        padding: 15px;
     }
 
     .menu-item {
         max-width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+
+    .auth-buttons {
+        flex-direction: column; 
+        gap: 5px; 
+        align-items: center; 
+    }
+
+    .search-bar {
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 15px; 
+    }
+
+    .search-bar input {
+        width: 90%; 
+        margin-bottom: 10px; 
+    }
+
+    #cart {
+        padding: 15px;
+    }
+
+    #cart ul li {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    #cart button {
+        font-size: 14px;
+        padding: 8px 16px;
+        width: 100%; /* Make buttons full width */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px; 
+        height: auto; 
+    }
+
+    header h1 {
+        font-size: 1.2rem; 
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px; 
+        width: 100%; 
+        text-align: center; 
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; 
+    }
+
+    .menu-container {
+        grid-template-columns: 1fr; /* Stack menu items */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .menu-item {
+        max-width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+
+    .auth-buttons {
+        flex-direction: column; 
+        gap: 5px; 
+        align-items: center; 
+    }
+
+    .search-bar {
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 15px; 
+    }
+
+    .search-bar input {
+        width: 90%; 
+        margin-bottom: 10px; 
+    }
+
+    #cart {
+        padding: 15px;
+    }
+
+    #cart ul li {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    #cart button {
+        font-size: 14px;
+        padding: 8px 16px;
+        width: 100%; /* Make buttons full width */
     }
 }
 
@@ -291,7 +383,6 @@ footer a {
     z-index: 2;
 }
 
-
 #home h2 {
     position: relative;
     z-index: 3;
@@ -312,46 +403,6 @@ footer a {
     margin-top: 10px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-
-@media (max-width: 768px) {
-    .menu-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .menu-item {
-        max-width: 250px;
-        height: auto;
-        padding: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px; 
-        height: 60px; 
-    }
-
-    header h1 {
-        font-size: 1.2rem; 
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 5px; 
-    }
-
-    nav ul li a {
-        font-size: 0.9rem; 
-    }
-
-    .auth-buttons {
-        flex-direction: column; 
-        gap: 5px; 
-    }
-}
-
 
 #cart {
     padding: 20px;
@@ -409,43 +460,7 @@ footer a {
 
 #cart button {
     display: inline-block;
-    margin: 10px 5px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#cart button:hover {
-    background-color: #0056b3;
-}
-
-#cart button#checkout {
-    background-color: #28a745;
-}
-
-#cart button#checkout:hover {
-    background-color: #218838;
-}
-
-@media (max-width: 768px) {
-    #cart {
-        padding: 15px;
-    }
-
-    #cart ul li {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-
-    #cart button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
+    margin: 10px
 }
 
 
