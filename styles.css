@@ -356,7 +356,6 @@ footer a {
     position: relative;
     height: 50vh;
     color: white;
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 20px 40px;
     padding-top: 100px; /* Adjust this to match your header height */
 }
