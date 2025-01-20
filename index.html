@@ -38,12 +38,10 @@
 
     <section id="menu">
         <h2>Menu</h2>
-        <div class="search-button">
-            <input type="text" placeholder="Search...">
-            <button>
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for items..." />
+            <button id="searchButton">Search</button>
+        </div>        
         <div class="menu-container">
             <div class="menu-item" data-name="Pizza" data-price="150">
                 <img src="pic1.jpg" alt="Pizza" class="menu-image">
@@ -198,25 +196,29 @@
                 }
             });
         }
-        document.getElementById('search-button').addEventListener('click', function() {
-    const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    const menuItems = document.querySelectorAll('.menu-item');
+        document.getElementById("searchButton").addEventListener("click", function () {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const menuItems = document.querySelectorAll(".menu-item");
 
-    menuItems.forEach(function(item) {
-        const title = item.querySelector('h3').textContent.toLowerCase();
-        const description = item.querySelector('p').textContent.toLowerCase();
-
-        if (title.includes(searchTerm) || description.includes(searchTerm)) {
-            item.style.display = 'block'; // Show item
+    menuItems.forEach((item) => {
+        const itemName = item.querySelector("h3").textContent.toLowerCase();
+        if (itemName.includes(searchTerm)) {
+            item.style.display = "block";
         } else {
-            item.style.display = 'none'; // Hide item
+            item.style.display = "none";
         }
     });
+});
+
+// Optional: Trigger search on Enter key
+document.getElementById("searchInput").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+        document.getElementById("searchButton").click();
+    }
 });
 
     </script>
 </body>
 </html>
-
 
 
