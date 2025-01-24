@@ -28,20 +28,21 @@
     </header>
 
     <section id="home">
-        <h2>Welcome to FOODFUSION!</h2>   
+        <h2>Welcome to FOODFUSION!</h2>
+
         <video autoplay muted loop>
             <source src="vid.mp4.mp4" type="video/mp4">
         </video>
     </section>
+    
+
     <section id="menu">
         <h2>Menu</h2>
         <div class="search-bar">
-    <input type="text" placeholder="Search here...">
-    <button>
-        <i class="fa fa-search"></i> Search
-    </button>
-</div>
-       <div class="menu-container">
+            <input type="text" id="searchInput" placeholder="Search for items..." />
+            <button id="searchButton">Search</button>
+        </div>        
+        <div class="menu-container">
             <div class="menu-item" data-name="Pizza" data-price="150">
                 <img src="pic1.jpg" alt="Pizza" class="menu-image">
                 <h3>Pizza</h3>
@@ -219,5 +220,4 @@ document.getElementById("searchInput").addEventListener("keypress", function (e)
     </script>
 </body>
 </html>
-
 
