@@ -353,8 +353,9 @@ footer a {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 0.7;
+    opacity: 1; /* Remove darkening */
 }
+
 
 #home::before {
     content: "";
@@ -448,6 +449,7 @@ footer a {
     display: inline-block;
     margin: 10px
     }
+
 
 
 
