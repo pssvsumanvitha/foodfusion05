@@ -1,31 +1,22 @@
-const foodPrices = {
-    "Pizza": 250,
-    "Burger": 150,
-    "Pasta": 200,
-    "Chicken Dry Roast": 199,
-    "Fries": 70,
-    "Biriyani": 100,
-    "Chicken Wings": 150,
-    "Icecream": 50,
-    "Soft Drink": 60
-};
-
 let cart = [];
 let totalPrice = 0;
 
 document.getElementById('add-to-cart').addEventListener('click', function() {
-    const selectedItems = Array.from(document.getElementById('food').selectedOptions).map(option => option.value);
+    const selectedOptions = Array.from(document.getElementById('food').selectedOptions);
 
-    selectedItems.forEach(item => {
-        cart.push(item);
-        totalPrice += foodPrices[item]; // works only if value exists in foodPrices
+    selectedOptions.forEach(option => {
+        const text = option.text; // e.g., "Burger - ₹150"
+        cart.push(text);
+
+        // Extract numeric price from text
+        const price = Number(text.replace(/[^0-9]/g, '')); 
+        totalPrice += price;
     });
 
     updateCart();
 });
 
-// Make sure the button ID matches
-document.getElementById('order-now').addEventListener('click', function() {
+document.getElementById('checkout').addEventListener('click', function() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
         return;
@@ -43,7 +34,7 @@ function updateCart() {
 
     cart.forEach(item => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${item} - ₹${foodPrices[item]}`;
+        listItem.textContent = item;
         cartItemsContainer.appendChild(listItem);
     });
 
