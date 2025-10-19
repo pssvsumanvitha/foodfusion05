@@ -2,7 +2,12 @@ const foodPrices = {
     "Pizza": 250,
     "Burger": 150,
     "Pasta": 200,
-    "Salad": 100
+    "Chicken Dry Roast": 199,
+    "Fries": 70,
+    "Biriyani": 100,
+    "Chicken Wings": 150,
+    "Icecream": 50,
+    "Soft Drink": 60
 };
 
 let cart = [];
@@ -13,13 +18,14 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
 
     selectedItems.forEach(item => {
         cart.push(item);
-        totalPrice += foodPrices[item];
+        totalPrice += foodPrices[item]; // works only if value exists in foodPrices
     });
 
     updateCart();
 });
 
-document.getElementById('checkout').addEventListener('click', function() {
+// Make sure the button ID matches
+document.getElementById('order-now').addEventListener('click', function() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
         return;
