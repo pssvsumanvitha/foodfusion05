@@ -1,8 +1,14 @@
 let cart = [];
 let totalPrice = 0;
 
+// Add selected items to cart
 document.getElementById('add-to-cart').addEventListener('click', function() {
     const selectedOptions = Array.from(document.getElementById('food').selectedOptions);
+
+    if (selectedOptions.length === 0) {
+        alert("Please select at least one food item.");
+        return;
+    }
 
     selectedOptions.forEach(option => {
         const text = option.text; // e.g., "Burger - ₹150"
@@ -16,18 +22,33 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
     updateCart();
 });
 
+// Checkout button
 document.getElementById('checkout').addEventListener('click', function() {
+    const paymentMethod = document.getElementById('payment').value;
+
     if (cart.length === 0) {
         alert('Your cart is empty!');
         return;
     }
 
-    alert(`Order placed successfully!\nTotal: ₹${totalPrice}`);
+    if (!paymentMethod) {
+        alert('Please select a payment method.');
+        return;
+    }
+
+    // Simulate order placement
+    alert(`Order placed successfully!\nTotal: ₹${totalPrice}\nPayment Method: ${paymentMethod}`);
+
+    // Reset cart and total
     cart = [];
     totalPrice = 0;
     updateCart();
+
+    // Reset form
+    document.getElementById('order-form').reset();
 });
 
+// Update the cart UI
 function updateCart() {
     const cartItemsContainer = document.getElementById('cart-items');
     cartItemsContainer.innerHTML = '';
